@@ -1,4 +1,5 @@
 1. OPIS DZIAŁANIA PROGRAMU
+
 Program służy do przeliczania współrzędnych między różnymi układami na różnych elipsoidach odniesienia (WGS84, GRS80, elipsoida Krasowskiego). 
 Są 5 opcje przeliczania współrzędnych:
 - XYZ(geocentryczne) -> BLH(elipsoidalne fi, lambda, h)
@@ -8,6 +9,7 @@ Są 5 opcje przeliczania współrzędnych:
 - BL(elipsoidalne fi, lambda, h) -> PL1992
 
 2. WYMAGANIA
+
 Żeby program poprawnie działał na danym komputerze użytkownik musi spełnić następujące wymagania:
 - mieć zainstalowanego Pythona w wersji 3.9
 - mieć zainstalowane biblioteki: numpy, math, argparse
