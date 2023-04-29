@@ -11,7 +11,7 @@ from argparse import ArgumentParser
 
 class Transformacje:
     
-    # TU MI COS NIE SIEDZI 
+     
     def __init__(self,model):
         if model == "wgs84":
             self.a = 6378137.0 # semimajor_axis
