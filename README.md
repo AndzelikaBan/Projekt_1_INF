@@ -90,35 +90,35 @@ dla pierwszego punktu z pliku wsp_flh.txt (kolejno fi, lambda, h)
   
   - *pl1992*
   
-  dla danych z pliku wsp_fl.txt (kolejno fi, lambda)
+  dla pierwszego punktu z pliku wsp_flh.txt (kolejno fi, lambda, h)
   ```sh
- 9.092689305349122009e-01,3.670695001091316412e-01
+ 9.092689315350223067e-01,3.670695034002574020e-01,1.413986623911187053e+02
   ```
   otrzymujemy wyniki (kolejno X92, Y92)
   ```sh
- cos tam
+ 472071.3410713384, 639114.4909222787
   ```
   
  - *pl2000*
  
-  dla danych z pliku wsp_fl.txt (kolejno fi, lambda)
+  dla pierwszego punktu z pliku wsp_flh.txt (kolejno fi, lambda, h)
   ```sh
-  9.092689305349122009e-01,3.670695001091316412e-01
+  9.092689315350223067e-01,3.670695034002574020e-01,1.413986623911187053e+02
   ```
   otrzymujemy wyniki (kolejno X2000, Y2000)
   ```sh
-  cos tam
+  5773722.720951517, 7502160.783244321
   ```
   
  - *XYZ2neu*
  
-  dla danych z pliku wsp_neu.txt (kolejno X, Y, Z)
+  dla pierwszego punktu z pliku neu.txt (kolejno s[m], alfa[rad], z[rad], fi, lambda)
   ```sh
-  3664940.500,1409153.590,5009571.170
+  31000,4.886921905584122,1.5707963267948966,0.9092689315350225,0.3670695034002574
   ```
   otrzymujemy wyniki (kolejno n, e, u)
   ```sh
- cos tam
+  4680.53574901, -30427.18265275,  -3644.05555915
   ```
 
 ***
