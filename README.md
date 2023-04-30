@@ -68,31 +68,31 @@ Plik ten zapisany zostanie w folderze, w którym znajduje się skrypt z programe
 # PRZYKŁADOWE TRANSFORMACJE DLA ELIPSOIDY GRS80
 - *flh2XYZ*
  
-dla danych z pliku wsp_flh.txt (kolejno fi, lambda, h)
+dla pierwszego punktu z pliku wsp_flh.txt (kolejno fi, lambda, h)
   ```sh
-  cos tam
+  9.092689315350223067e-01,3.670695034002574020e-01,1.413986623911187053e+02
   ```
   otrzymujemy wyniki (kolejno X, Y, Z)
   ```sh
-  cos tam
+  3664940.5000059702, 1409153.5900022953, 5009571.17000816
   ```
   
   - *hirvonen*
   
-  dla danych z pliku wsp_inp.txt (kolejno X, Y, Z)
+  dla pierwszego punktu z pliku wsp_inp.txt (kolejno X, Y, Z)
   ```sh
- cos tam
+ 3664940.500,1409153.590,5009571.170
   ```
   otrzymujemy wyniki (kolejno fi, lambda, h)
   ```sh
- cos tam
+ 0.9092689315350223, 0.3670695034002574, 141.3986623911187
   ```
   
   - *pl1992*
   
-  dla danych z pliku (kolejno fi, lambda)
+  dla danych z pliku wsp_fl.txt (kolejno fi, lambda)
   ```sh
- cos tam
+ 9.092689305349122009e-01,3.670695001091316412e-01
   ```
   otrzymujemy wyniki (kolejno X92, Y92)
   ```sh
@@ -101,9 +101,9 @@ dla danych z pliku wsp_flh.txt (kolejno fi, lambda, h)
   
  - *pl2000*
  
-  dla danych z pliku (kolejno fi, lambda)
+  dla danych z pliku wsp_fl.txt (kolejno fi, lambda)
   ```sh
-  cos tam
+  9.092689305349122009e-01,3.670695001091316412e-01
   ```
   otrzymujemy wyniki (kolejno X2000, Y2000)
   ```sh
@@ -114,7 +114,7 @@ dla danych z pliku wsp_flh.txt (kolejno fi, lambda, h)
  
   dla danych z pliku wsp_neu.txt (kolejno X, Y, Z)
   ```sh
-  cos tam
+  3664940.500,1409153.590,5009571.170
   ```
   otrzymujemy wyniki (kolejno n, e, u)
   ```sh
