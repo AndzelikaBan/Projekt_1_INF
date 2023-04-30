@@ -2,31 +2,36 @@
 
 # SPIS TREŚCI
 - [Opis działania programu](#OPIS-DZIAŁANIA-PROGRAMU)
+- [Wymagania](#WYMAGANIA)
+- [Obsługiwane systemy](#OBSŁUGIWANE-SYSTEMY)
+- [Jak korzystać z programu](#JAK-KORZYSTAĆ-Z-PROGRAMU)
+- [Błędy oraz nietypowe zachowania programu](#BŁĘDY-ORAZ-NIETYPOWE-ZACHOWANIA-PROGRAMU)
+
 
 
 # OPIS DZIAŁANIA PROGRAMU
 
 Program służy do przeliczania współrzędnych między różnymi układami na różnych elipsoidach odniesienia (WGS84, GRS80, elipsoida Krasowskiego). 
 Są 5 opcje przeliczania współrzędnych:
-- XYZ(geocentryczne) -> BLH(elipsoidalne fi, lambda, h)
-- BLH(elipsoidalne fi, lambda, h) -> XYZ(geocentryczne)
-- BL(elipsoidalne fi, lambda, h) -> NEU(topocentryczne northing, easting, up)
-- BL(elipsoidalne fi, lambda, h) -> PL2000
-- BL(elipsoidalne fi, lambda, h) -> PL1992
+- XYZ (geocentryczne) -> BLH (elipsoidalne fi, lambda, h)
+- BLH (elipsoidalne fi, lambda, h) -> XYZ (geocentryczne)
+- BL (elipsoidalne fi, lambda, h) -> NEU (topocentryczne northing, easting, up)
+- BL (elipsoidalne fi, lambda, h) -> PL2000
+- BL (elipsoidalne fi, lambda, h) -> PL1992
 
-# 2. WYMAGANIA
+# WYMAGANIA
 
 Żeby program poprawnie działał na danym komputerze użytkownik musi spełnić następujące wymagania:
 - mieć zainstalowanego Pythona w wersji 3.9
 - mieć zainstalowane biblioteki: numpy, math, argparse
 
 
-# 3. OBSŁUGIWANE SYSTEMY
+# OBSŁUGIWANE SYSTEMY
 - Windows 10
 - Windows 11
 
 
-# 4. JAK KORZYSTAĆ Z PROGRAMU
+# JAK KORZYSTAĆ Z PROGRAMU
 
 W celu poprawnego korzystania z programu konieczne będzie utowrzenie pliku ze współrzędnymi (.txt). Jeden wiersz odpowiada współrzędnym jednego punktu i jego dane powinny być oddzielone "," (przecinkiem). Części dziesiętne muszą znajdować się po "." (kropce).
 
@@ -53,4 +58,4 @@ W celu wywołania funkcji należy użyć komendy:
 - XYZ2neu (przelicza współrzędne fi, lambda do układu NEU)
 
 
-# 5. BŁĘDY ORAZ NIETYPOWE ZACHOWANIA PROGRAMU
+# BŁĘDY ORAZ NIETYPOWE ZACHOWANIA PROGRAMU
