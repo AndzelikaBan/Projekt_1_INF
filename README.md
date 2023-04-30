@@ -8,19 +8,20 @@ Są 5 opcje przeliczania współrzędnych:
 - BL(elipsoidalne fi, lambda, h) -> PL2000
 - BL(elipsoidalne fi, lambda, h) -> PL1992
 
-2. WYMAGANIA
+# 2. WYMAGANIA
 
 Żeby program poprawnie działał na danym komputerze użytkownik musi spełnić następujące wymagania:
 - mieć zainstalowanego Pythona w wersji 3.9
 - mieć zainstalowane biblioteki: numpy, math, argparse
 
 
-3. OBSŁUGIWANE SYSTEMY
+# 3. OBSŁUGIWANE SYSTEMY
 - Windows 10
 - Windows 11
 
 
-4. JAK KORZYSTAĆ Z PROGRAMU
+# 4. JAK KORZYSTAĆ Z PROGRAMU
+
 W celu poprawnego korzystania z programu konieczne będzie utowrzenie pliku ze współrzędnymi (.txt). Jeden wiersz odpowiada współrzędnym jednego punktu i jego dane powinny być oddzielone "," (przecinkiem). Części dziesiętne muszą znajdować się po "." (kropce).
 
 Przykładowy format pliku txt:
@@ -33,12 +34,12 @@ W celu wywołania funkcji należy użyć komendy:
 
 	
 
-Nazwy obsługiwanych elipsoid:
+## Nazwy obsługiwanych elipsoid:
 - grs80
 - wgs84
 - Elipsoida Krasowskiego
 
-Nazwy obsługiwanych funkcji:
+## Nazwy obsługiwanych funkcji:
 - flh2XYZ (przelicza współrzędne fi, lambda, h na współrzędne X, Y, Z)
 - hirvonen (przelicza współrzędne X, Y, Z na współrzędne fi, lambda, h)
 - pl1992 (przelicza współrzędne fi, lambda do układu PL1992)
@@ -46,4 +47,4 @@ Nazwy obsługiwanych funkcji:
 - XYZ2neu (przelicza współrzędne fi, lambda do układu NEU)
 
 
-5. BŁĘDY ORAZ NIETYPOWE ZACHOWANIA PROGRAMU
+# 5. BŁĘDY ORAZ NIETYPOWE ZACHOWANIA PROGRAMU
