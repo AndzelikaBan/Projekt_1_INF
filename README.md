@@ -61,7 +61,7 @@ Plik ten zapisany zostanie w folderze, w którym znajduje się skrypt z programe
 - hirvonen (przelicza współrzędne X, Y, Z na współrzędne fi, lambda, h)
 - pl1992 (przelicza współrzędne fi, lambda do układu PL1992)
 - pl2000 (przelicza współrzędne fi, lambda do układu PL2000)
-- XYZ2neu (przelicza współrzędne fi, lambda do układu NEU)
+- XYZ2neu (przelicza współrzędne X, Y, Z do układu NEU)
 
 ***
 
