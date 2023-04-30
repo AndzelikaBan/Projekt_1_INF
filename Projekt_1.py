@@ -39,6 +39,36 @@ class Transformacje:
                 break
         return(X,Y,Z)
     
+    def pl1992(self,fi,l,m=0.9993):
+        
+        l0 = np.deg2rad(19)
+        # 1 parametry elipsoidy     
+        b2 = self.a**2*(1-self.e2)
+        ep2 = (self.a**2-b2)/b2
+        # 2. Wielkosci pomocnicze     
+        dell = l - l0
+        t = np.tan(fi)
+        ni2 = ep2*(np.cos(fi)**2)
+        N=self.a/np.sqrt(1-self.e2*np.sin(fi)**2)
+        
+        # 3. Długosc luku poludnika 
+        A0 = 1- (self.e2/4)-(3*self.e2**2/64)-(5*self.e2**3/256)
+        A2 = (3/8)*(self.e2+(self.e2**2/4)+(15*self.e2**3/128))
+        A4 = (15/256)*(self.e2**2+((3*self.e2**3)/4))
+        A6 = (35*self.e2**3)/3072
+        
+        sigma = self.a *(A0*fi-A2*np.sin(2*fi)+A4*np.sin(4*fi)-A6*np.sin(6*fi))
+        
+        # wsolrzedne prostokatne lokalne na plaszczyznie gaussa-krugera
+        
+        xgk =  sigma    +    ( ((dell**2/2)*N*np.sin(fi)*np.cos(fi))    *    (1   +   ((dell**2/12)*(np.cos(fi)**2)*(5 - t**2 + 9*ni2 + 4*ni2**2))      +         ((dell**4/360)*(np.cos(fi)**4)*(61 - 58*t**2 + t**4 + 270*ni2 - 330*ni2*t**2))))
+        
+        ygk =  (dell* N * np.cos(fi))  *   ( 1 +  ((dell**2/6)   *   (np.cos(fi)**2)   *  (1 - t**2 + ni2))     +     (((dell**4/120)*(np.cos(fi)**4)) * (5 - (18*t**2) + t**4 + (14 * ni2) - (58*ni2*t**2))))
+        
+        x92 = xgk * m - 5300000
+        y92 = ygk*m + 500000
+        return  x92, y92,xgk,ygk
+    
     
     def pl2000(self,fi,l,m=0.999923):
         l0=0 
