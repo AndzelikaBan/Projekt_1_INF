@@ -54,7 +54,7 @@ Plik ten zapisany zostanie w folderze, w którym znajduje się skrypt z programe
 # Nazwy obsługiwanych elipsoid
 - grs80
 - wgs84
-- Elipsoida Krasowskiego
+- Krasowski
 
 # Nazwy obsługiwanych funkcji
 - flh2XYZ (przelicza współrzędne fi, lambda, h na współrzędne X, Y, Z)
