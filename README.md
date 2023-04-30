@@ -39,16 +39,16 @@ Przykładowy format pliku txt:
 
 
 ## Przykładowe wywołanie
-W celu wprowadzenia danych do programu należy uruchomić wiersz poleceń w lokalizacji, w której znajduje się plik z programem. Następnie należy użyć komendy: ***python Projekt_1.py -plik nazwa_pliku.txt -trans [nazwa_funkcji](##Nazwy-obsługiwanych-funkcji) -model [nazwa_elipsoidy](##Nazwy-obsługiwanych-elipsoid)***. 
+W celu wprowadzenia danych do programu należy uruchomić wiersz poleceń w lokalizacji, w której znajduje się plik z programem. Następnie należy użyć komendy: ***python Projekt_1.py -plik nazwa_pliku.txt -trans [nazwa_funkcji](#Nazwy-obsługiwanych-funkcji) -model [nazwa_elipsoidy](#Nazwy-obsługiwanych-elipsoid)***. 
 
 	
 
-## Nazwy obsługiwanych elipsoid
+# Nazwy obsługiwanych elipsoid
 - grs80
 - wgs84
 - Elipsoida Krasowskiego
 
-## Nazwy obsługiwanych funkcji
+# Nazwy obsługiwanych funkcji
 - flh2XYZ (przelicza współrzędne fi, lambda, h na współrzędne X, Y, Z)
 - hirvonen (przelicza współrzędne X, Y, Z na współrzędne fi, lambda, h)
 - pl1992 (przelicza współrzędne fi, lambda do układu PL1992)
