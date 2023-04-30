@@ -27,7 +27,19 @@ class Transformacje:
         self.sp = (self.a - self.b) / self.a
         self.e2 = (2 * self.sp - self.sp ** 2) 
         
-        
+    def hirvonen(self,X,Y,Z): #XYZ zamieniamy na flh
+        p = np.sqrt(X**2+Y**2)
+        fi = np.arctan(Z/(p*(1-self.e2)))
+        while True: #pętla
+            N=self.a/np.sqrt(1-self.e2*np.sin(fi)**2)
+            h=p/np.cos(fi)-N
+            fip=fi
+            fi=np.arctan(Z/(p*(1-self.e2*N/(N+h))))
+            if abs(fip-fi)<(0.000001/206265):
+                break
+        l=np.arctan2(Y,X) #lambda
+        return(fi,l,h)
+    
     def flh2XYZ(self,fi,l,h):
         while True:
             N=self.a/np.sqrt(1-self.e2*np.sin(fi)**2)
