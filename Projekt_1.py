@@ -23,7 +23,7 @@ class Transformacje:
             self.a = 6370245.0
             self.b = 6356863.01877
         else:
-            raise NotImplementedError(f"{model} Ta operacja jest niemożliwa!")    
+            raise NotImplementedError(f"{model} Ta operacja jest nie zostanie wykonana, nie poprawne dane!")    
         self.sp = (self.a - self.b) / self.a
         self.e2 = (2 * self.sp - self.sp ** 2) 
         
@@ -41,6 +41,23 @@ class Transformacje:
         return(fi,l,h)
     
     def flh2XYZ(self,fi,l,h):
+        '''
+        Funkcja przelicza ze współrzędnych krzywoliniowych na współrzędne prostokątne.
+        
+        Parameters:
+        ----------
+        
+        fi - szerokość geograficzna punktu | typ: lista
+        l - długość geograficzna punktu   | typ: lista
+        h - wysokość punktu               | typ: float lub int
+
+        Returns:
+        -------
+        X - współrzędna prostokątna X punktu | typ: float
+        Y - współrzędna prostokątna Y punktu | typ: float
+        Z - współrzędna prostokątna Z punktu | typ: float
+        
+        '''
         while True:
             N=self.a/np.sqrt(1-self.e2*np.sin(fi)**2)
             X=(N+h)*np.cos(fi)*np.cos(l)
@@ -52,6 +69,38 @@ class Transformacje:
         return(X,Y,Z)
     
     def pl1992(self,fi,l,m=0.9993):
+        """
+        Przeniesienie wspolrzednych krzywoliniowych geodezyjnych punktu A
+        do ukladu PL-1992
+
+        Parameters
+        ----------
+        fi : float
+            Szerokosc geodezyjna punktu A.
+            Jednostka -- RAD
+        l : float
+            Dlugosc geodezyjna punktu A.
+            Jednostka -- RAD
+        a : float, optional
+            Polos wielka. The default is 6378137.
+            Jednostka -- METR
+        e2 : float, optional
+            I mimosrod elipsoidy. The default is 0.00669438002290.
+            Jednostka -- brak
+        m : float, optional
+            Wspolczynnik zmiany skali. The default is 0.9993.
+            Jednostka -- brak
+
+        Returns
+        -------
+        x92 : float
+            Wspolrzedna X punktu A w ukladzie PL-1992.
+            Jednostka -- METR
+        y92 : TYPE
+            Wspolrzedna Y punktu A w ukladzie PL-1992.
+            Jednostka -- METR
+
+        """
         
         l0 = np.deg2rad(19)
         # 1 parametry elipsoidy     
@@ -158,6 +207,15 @@ class Transformacje:
         x2000 = xgk * m 
         y2000 = ygk*m + (strefa *1000000) +500000
         return  x2000, y2000,xgk,ygk
+    
+    def XYZ2neu(self,s,alfa,z,fi,l):
+        dneu=np.array([s*np.sin(z)*np.cos(alfa),
+                       s*np.sin(z)*np.sin(alfa),
+                       s*np.cos(z)])
+        R=np.array([[-np.sin(fi)*np.cos(l),-np.sin(l),np.cos(fi)*np.cos(l)],
+                    [-np.sin(fi)*np.sin(l),np.cos(l),np.cos(fi)*np.sin(l)],
+                    [ np.cos(fi),            0.     ,np.sin(fi)]])
+        return(R.T @ dneu)
 
 if __name__ == "__main__":
     parser = ArgumentParser()
