@@ -168,7 +168,16 @@ if __name__ == "__main__":
     
     print(args.plik)
 
-
+    model = {"wgs84":"wgs84", "grs80":"grs80", "Elipsoida Krasowskiego":"Elipsoida Krasowskiego"}
+    trans = {"hirvonen": "hirvonen", "flh2XYZ": "flh2XYZ","pl1992":"pl1992", "pl2000":"pl2000", "XYZ2neu":"XYZ2neu"}
+    
+    try:
+        dane = np.genfromtxt(args.plik, delimiter=",")
+        obiekt = Transformacje(model[args.model])
+        a = obiekt.a
+        e2 = obiekt.e2
+        result = []
+        print(dane)
 
 
 
