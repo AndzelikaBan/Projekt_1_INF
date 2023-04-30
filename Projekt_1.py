@@ -27,7 +27,34 @@ class Transformacje:
         self.sp = (self.a - self.b) / self.a
         self.e2 = (2 * self.sp - self.sp ** 2) 
         
-    def hirvonen(self,X,Y,Z): #XYZ zamieniamy na flh
+    def hirvonen(self,X,Y,Z):
+        """
+        Algorytm Hirvonena - algorytm transformacji współrzędnych ortokartezjańskich (x, y, z)
+        na współrzędne geodezyjne długość szerokość i wysokośc elipsoidalna (fi, l, h). Jest to proces iteracyjny. 
+        W wyniku 3-4-krotneej iteracji wyznaczenia wsp. fi można przeliczyć współrzędne z dokładnoscią ok 1 cm.
+
+        Parameters:
+        ----------
+        X : TYPE: FLOAT
+            Współrzędna X w układzie ortokartezjańskim
+        Y : TYPE: FLOAT
+            Współrzędna Y w układzie ortokartezjańskim
+        Z : TYPE: FLOAT
+            Współrzędna Z w układzie ortokartezjańskim
+
+        Returns
+        -------
+        fi  : TYPE: FLOAT
+            [stopnie dziesiętne] - szerokość geodezyjna
+        l  : TYPE: FLOAT
+            [stopnie dziesiętne] - długośc geodezyjna.
+        h  : TYPE FLOAT
+            [metry] - wysokość elipsoidalna
+            
+        output [STR] - fi, l, h - in radians
+            
+
+        """
         p = np.sqrt(X**2+Y**2)
         fi = np.arctan(Z/(p*(1-self.e2)))
         while True: #pętla
@@ -69,38 +96,7 @@ class Transformacje:
         return(X,Y,Z)
     
     def pl1992(self,fi,l,m=0.9993):
-        """
-        Przeniesienie wspolrzednych krzywoliniowych geodezyjnych punktu A
-        do ukladu PL-1992
-
-        Parameters
-        ----------
-        fi : float
-            Szerokosc geodezyjna punktu A.
-            Jednostka -- RAD
-        l : float
-            Dlugosc geodezyjna punktu A.
-            Jednostka -- RAD
-        a : float, optional
-            Polos wielka. The default is 6378137.
-            Jednostka -- METR
-        e2 : float, optional
-            I mimosrod elipsoidy. The default is 0.00669438002290.
-            Jednostka -- brak
-        m : float, optional
-            Wspolczynnik zmiany skali. The default is 0.9993.
-            Jednostka -- brak
-
-        Returns
-        -------
-        x92 : float
-            Wspolrzedna X punktu A w ukladzie PL-1992.
-            Jednostka -- METR
-        y92 : TYPE
-            Wspolrzedna Y punktu A w ukladzie PL-1992.
-            Jednostka -- METR
-
-        """
+        
         
         l0 = np.deg2rad(19)
         # 1 parametry elipsoidy     
@@ -209,6 +205,8 @@ class Transformacje:
         return  x2000, y2000,xgk,ygk
     
     def XYZ2neu(self,s,alfa,z,fi,l):
+       
+        
         dneu=np.array([s*np.sin(z)*np.cos(alfa),
                        s*np.sin(z)*np.sin(alfa),
                        s*np.cos(z)])
