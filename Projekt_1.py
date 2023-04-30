@@ -314,10 +314,14 @@ if __name__ == "__main__":
             if trans[args.trans]=="XYZ2neu":
                 line = obiekt.XYZ2neu(xyz[0],xyz[1],xyz[2],xyz[3],xyz[4])
                 result.append(line)
+            else:
+                trans = args.trans
+                raise NotImplementedError(f"{trans} Ta operacja jest niemożliwa!")   
+            
 
 
         print(result)
-        np.savetxt("wyniki.txt",result,delimiter=",")
+        np.savetxt("wyniki.txt",result,delimiter=",",fmt='%7.6f')
             
         
     finally:
