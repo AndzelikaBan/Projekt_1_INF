@@ -321,7 +321,7 @@ if __name__ == "__main__":
 
 
         print(result)
-        np.savetxt("wyniki.txt",result,delimiter=",",fmt='%7.6f')
+        np.savetxt("wyniki.txt",result,delimiter=",",fmt='%8.6f')
             
         
     finally:
