@@ -5,6 +5,7 @@
 - [Wymagania](#WYMAGANIA)
 - [Obsługiwane systemy](#OBSŁUGIWANE-SYSTEMY)
 - [Jak korzystać z programu](#JAK-KORZYSTAĆ-Z-PROGRAMU)
+- [Przykładowe transformacje](#PRZYKŁADOWE-TRANSFORMACJE)
 - [Błędy oraz nietypowe zachowania programu](#BŁĘDY-ORAZ-NIETYPOWE-ZACHOWANIA-PROGRAMU)
 
 ***
@@ -39,11 +40,14 @@ Jest 5 opcji przeliczania współrzędnych:
 
 W celu poprawnego korzystania z programu konieczne będzie utowrzenie pliku ze współrzędnymi (.txt). Jeden wiersz odpowiada współrzędnym jednego punktu i jego dane powinny być oddzielone "," (przecinkiem). Części dziesiętne muszą znajdować się po "." (kropce).
 
-Przykładowy format pliku txt:
 
-
-## Przykładowe wywołanie
 W celu wprowadzenia danych do programu należy uruchomić wiersz poleceń w lokalizacji, w której znajduje się plik z programem. Następnie należy użyć komendy: ***python Projekt_1.py -plik nazwa_pliku.txt -trans [nazwa_funkcji](#Nazwy-obsługiwanych-funkcji) -model [nazwa_elipsoidy](#Nazwy-obsługiwanych-elipsoid)***. 
+
+Po wyborze parametrów i załadowaniu pliku z danymi wygeneruje się plik tekstowy z wynikami naszej transformacji, a na konsoli pojawi się komunikat:
+  ```sh
+   Plik wynikowy zapisany.
+  ```
+Plik ten zapisany zostanie w folderze, w którym znajduje się skrypt z programem.
 
 ***	
 
@@ -61,4 +65,61 @@ W celu wprowadzenia danych do programu należy uruchomić wiersz poleceń w loka
 
 ***
 
+# PRZYKŁADOWE TRANSFORMACJE DLA ELIPSOIDY GRS80
+- *flh2XYZ*
+ 
+dla danych z pliku (kolejno fi, lambda, h)
+  ```sh
+  cos tam
+  ```
+  otrzymujemy wyniki (kolejno X, Y, Z)
+  ```sh
+  cos tam
+  ```
+  
+  - *hirvonen*
+  
+  dla danych z pliku (kolejno X, Y, Z)
+  ```sh
+ cos tam
+  ```
+  otrzymujemy wyniki (kolejno fi, lambda, h)
+  ```sh
+ cos tam
+  ```
+  
+  - *pl1992*
+  
+  dla danych z pliku (kolejno fi, lambda)
+  ```sh
+ cos tam
+  ```
+  otrzymujemy wyniki (kolejno X92, Y92)
+  ```sh
+ cos tam
+  ```
+  
+ - *pl2000*
+ 
+  dla danych z pliku (kolejno fi, lambda)
+  ```sh
+  cos tam
+  ```
+  otrzymujemy wyniki (kolejno X2000, Y2000)
+  ```sh
+  cos tam
+  ```
+  
+ - *XYZ2neu*
+ 
+  dla danych z pliku (kolejno X, Y, Z)
+  ```sh
+  cos tam
+  ```
+  otrzymujemy wyniki (kolejno n, e, u)
+  ```sh
+ cos tam
+  ```
+
+***
 # BŁĘDY ORAZ NIETYPOWE ZACHOWANIA PROGRAMU
