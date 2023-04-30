@@ -171,6 +171,7 @@ if __name__ == "__main__":
     model = {"wgs84":"wgs84", "grs80":"grs80", "Elipsoida Krasowskiego":"Elipsoida Krasowskiego"}
     trans = {"hirvonen": "hirvonen", "flh2XYZ": "flh2XYZ","pl1992":"pl1992", "pl2000":"pl2000", "XYZ2neu":"XYZ2neu"}
     
+
     try:
         dane = np.genfromtxt(args.plik, delimiter=",")
         obiekt = Transformacje(model[args.model])
@@ -179,6 +180,34 @@ if __name__ == "__main__":
         result = []
         print(dane)
 
+        for xyz in dane:    
+            if trans[args.trans]=="hirvonen":
+                line = obiekt.hirvonen(xyz[0],xyz[1],xyz[2])
+                result.append(line)
+               
+            if trans[args.trans]=="flh2XYZ":
+                line = obiekt.flh2XYZ(xyz[0],xyz[1],xyz[2])
+                result.append(line)
+               
+            if trans[args.trans]=="pl1992":
+                line = obiekt.pl1992(xyz[0],xyz[1])
+                result.append(line)
+               
+            if trans[args.trans]=="pl2000":
+                line = obiekt.pl2000(xyz[0],xyz[1])
+                result.append(line)
+                
+            if trans[args.trans]=="XYZ2neu":
+                line = obiekt.XYZ2neu(xyz[0],xyz[1],xyz[2],xyz[3],xyz[4])
+                result.append(line)
+
+
+        print(result)
+        np.savetxt("wyniki.txt",result,delimiter=",")
+            
+        
+    finally:
+        print("Plik wynikowy zapisany.")
 
 
 
