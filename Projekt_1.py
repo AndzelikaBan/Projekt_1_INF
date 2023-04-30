@@ -96,8 +96,38 @@ class Transformacje:
         return(X,Y,Z)
     
     def pl1992(self,fi,l,m=0.9993):
-        
-        
+        """
+        Przeniesienie wspolrzednych krzywoliniowych geodezyjnych punktu A
+        do ukladu PL-1992
+
+        Parameters
+        ----------
+        fi : float
+            Szerokosc geodezyjna punktu A.
+            Jednostka -- RAD
+        l : float
+            Dlugosc geodezyjna punktu A.
+            Jednostka -- RAD
+        a : float, optional
+            Polos wielka. The default is 6378137.
+            Jednostka -- METR
+        e2 : float, optional
+            I mimosrod elipsoidy. The default is 0.00669438002290.
+            Jednostka -- brak
+        m : float, optional
+            Wspolczynnik zmiany skali. The default is 0.9993.
+            Jednostka -- brak
+
+        Returns
+        -------
+        x92 : float
+            Wspolrzedna X punktu A w ukladzie PL-1992.
+            Jednostka -- METR
+        y92 : TYPE
+            Wspolrzedna Y punktu A w ukladzie PL-1992.
+            Jednostka -- METR
+
+        """
         l0 = np.deg2rad(19)
         # 1 parametry elipsoidy     
         b2 = self.a**2*(1-self.e2)
@@ -205,8 +235,35 @@ class Transformacje:
         return  x2000, y2000,xgk,ygk
     
     def XYZ2neu(self,s,alfa,z,fi,l):
-       
+        """
+        Funkcja, która, przyjmujac współrzedne krzywoliniowe utworzy macierz obrotu 
+        potrzebną do przeliczenia współrzędnych do układu współrzędnych neu
+    
+        INPUT:
+        ----------
+        s : [float] : dlugosc
+        alfa: kat w radianach 
+        z : kat zenitalny w radianach 
+        fi : [float] : wspołrzędna fi punktu początkowego układu lokalnego
+        l : [float] :wspołrzędna l punktu początkowego układu lokalnego
+    
+        OUTPUT:
+        -------
+        R : [array of float64] : macierz obrotu
+    
         
+        Funckja obliczająca wektor w układzie neu
+    
+        Parameters:
+        -----------
+        R : R : [array of float64] : macierz obrotu
+        dneu : [array of float64] : macierz stworzona z : s, alfa,z
+        
+        Returns:
+        -------
+        NEU : [array of float64] : współrzedne topocentryczne (North , East (E), Up (U))
+    
+        """
         dneu=np.array([s*np.sin(z)*np.cos(alfa),
                        s*np.sin(z)*np.sin(alfa),
                        s*np.cos(z)])
@@ -214,6 +271,7 @@ class Transformacje:
                     [-np.sin(fi)*np.sin(l),np.cos(l),np.cos(fi)*np.sin(l)],
                     [ np.cos(fi),            0.     ,np.sin(fi)]])
         return(R.T @ dneu)
+    
 
 if __name__ == "__main__":
     parser = ArgumentParser()
