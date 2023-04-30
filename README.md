@@ -68,7 +68,7 @@ Plik ten zapisany zostanie w folderze, w którym znajduje się skrypt z programe
 # PRZYKŁADOWE TRANSFORMACJE DLA ELIPSOIDY GRS80
 - *flh2XYZ*
  
-dla danych z pliku (kolejno fi, lambda, h)
+dla danych z pliku wsp_flh.txt (kolejno fi, lambda, h)
   ```sh
   cos tam
   ```
@@ -79,7 +79,7 @@ dla danych z pliku (kolejno fi, lambda, h)
   
   - *hirvonen*
   
-  dla danych z pliku (kolejno X, Y, Z)
+  dla danych z pliku wsp_inp.txt (kolejno X, Y, Z)
   ```sh
  cos tam
   ```
@@ -112,7 +112,7 @@ dla danych z pliku (kolejno fi, lambda, h)
   
  - *XYZ2neu*
  
-  dla danych z pliku (kolejno X, Y, Z)
+  dla danych z pliku wsp_neu.txt (kolejno X, Y, Z)
   ```sh
   cos tam
   ```
