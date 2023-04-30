@@ -19,7 +19,7 @@ class Transformacje:
         elif model == "grs80":
             self.a = 6378137.0
             self.b = 6356752.31414036
-        elif model == "Elipsoida Krasowskiego":
+        elif model == "Krasowski":
             self.a = 6370245.0
             self.b = 6356863.01877
         else:
