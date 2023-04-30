@@ -1,4 +1,4 @@
-1. OPIS DZIAŁANIA PROGRAMU
+# 1. OPIS DZIAŁANIA PROGRAMU
 
 Program służy do przeliczania współrzędnych między różnymi układami na różnych elipsoidach odniesienia (WGS84, GRS80, elipsoida Krasowskiego). 
 Są 5 opcje przeliczania współrzędnych:
