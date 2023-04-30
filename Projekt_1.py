@@ -147,7 +147,14 @@ class Transformacje:
         y2000 = ygk*m + (strefa *1000000) +500000
         return  x2000, y2000,xgk,ygk
 
-
+if __name__ == "__main__":
+    parser = ArgumentParser()
+    parser.add_argument("-plik" , type = str, help = "sciezka do pliku")
+    parser.add_argument("-trans", type = str, help = "wybrana transformacja")
+    parser.add_argument("-model" , type = str, help = "wybrany model")
+    args = parser.parse_args()
+    
+    print(args.plik)
 
 
 
