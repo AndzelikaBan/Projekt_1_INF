@@ -12,7 +12,7 @@
 # OPIS DZIAŁANIA PROGRAMU
 
 Program służy do przeliczania współrzędnych między różnymi układami na różnych elipsoidach odniesienia (WGS84, GRS80, elipsoida Krasowskiego). 
-Są 5 opcje przeliczania współrzędnych:
+Jest 5 opcji przeliczania współrzędnych:
 - XYZ (geocentryczne) -> BLH (elipsoidalne fi, lambda, h)
 - BLH (elipsoidalne fi, lambda, h) -> XYZ (geocentryczne)
 - BL (elipsoidalne fi, lambda, h) -> NEU (topocentryczne northing, easting, up)
