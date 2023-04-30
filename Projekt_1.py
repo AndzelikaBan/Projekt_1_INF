@@ -65,7 +65,7 @@ class Transformacje:
             if abs(fip-fi)<(0.000001/206265):
                 break
         l=np.arctan2(Y,X) #lambda
-        return(fi,l,h)
+        return fi,l,h 
     
     def flh2XYZ(self,fi,l,h):
         '''
@@ -235,7 +235,8 @@ class Transformacje:
         return  x2000, y2000
     
     
-    def XYZ2neu(self,s,alfa,z,X,Y,Z):
+   
+    def XYZ2neu(self,s,alfa,z,fi,l):
         """
         Funkcja, która, przyjmujac współrzedne krzywoliniowe utworzy macierz obrotu 
         potrzebną do przeliczenia współrzędnych do układu współrzędnych neu
@@ -267,17 +268,6 @@ class Transformacje:
         NEU : [array of float64] : współrzedne topocentryczne (North , East (E), Up (U))
     
         """
-        p = np.sqrt(X**2+Y**2)
-        fi = np.arctan(Z/(p*(1-self.e2)))
-        while True: #pętla
-            N=self.a/np.sqrt(1-self.e2*np.sin(fi)**2)
-            h=p/np.cos(fi)-N
-            fip=fi
-            fi=np.arctan(Z/(p*(1-self.e2*N/(N+h))))
-            if abs(fip-fi)<(0.000001/206265):
-                break
-        l=np.arctan2(Y,X)
-        
         dneu=np.array([s*np.sin(z)*np.cos(alfa),
                        s*np.sin(z)*np.sin(alfa),
                        s*np.cos(z)])
@@ -285,7 +275,9 @@ class Transformacje:
                     [-np.sin(fi)*np.sin(l),np.cos(l),np.cos(fi)*np.sin(l)],
                     [ np.cos(fi),            0.     ,np.sin(fi)]])
         return(R.T @ dneu)
-  
+        
+        
+       
     
 
 if __name__ == "__main__":
@@ -303,7 +295,7 @@ if __name__ == "__main__":
 
     try:
         dane = np.genfromtxt(args.plik, delimiter=",")
-        obiekt = Transformacje(model[args.model])
+        obiekt = Transformacje(args.model)
         a = obiekt.a
         e2 = obiekt.e2
         result = []
@@ -314,19 +306,19 @@ if __name__ == "__main__":
                 line = obiekt.hirvonen(xyz[0],xyz[1],xyz[2])
                 result.append(line)
                
-            if args.trans=="flh2XYZ":
+            elif args.trans=="flh2XYZ":
                 line = obiekt.flh2XYZ(xyz[0],xyz[1],xyz[2])
                 result.append(line)
                
-            if args.trans=="pl1992":
+            elif args.trans=="pl1992":
                 line = obiekt.pl1992(xyz[0],xyz[1])
                 result.append(line)
                
-            if args.trans=="pl2000":
+            elif args.trans=="pl2000":
                 line = obiekt.pl2000(xyz[0],xyz[1])
                 result.append(line)
                 
-            if args.trans=="XYZ2neu":
+            elif args.trans=="XYZ2neu":
                 line = obiekt.XYZ2neu(xyz[0],xyz[1],xyz[2],xyz[3],xyz[4])
                 result.append(line)
             else:
@@ -341,7 +333,7 @@ if __name__ == "__main__":
         
     finally:
         print("Plik wynikowy zapisany.")
-
+#fmt='%8.6f'"
 
 
 
