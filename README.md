@@ -39,7 +39,7 @@ Przykładowy format pliku txt:
 
 
 ## Przykładowe wywołanie
-W celu wprowadzenia danych do programu należy uruchomić wiersz poleceń w lokalizacji, w której znajduje się plik z programem. Następnie należy użyć komendy: ***python Projekt_1.py -plik nazwa_pliku.txt -trans [nazwa_funkcji](##Nazwy-obsługiwanych-funkcji) -model [nazwa_elipsoidy](##Nazwy-obsługiwanych-elipsoid)***  
+W celu wprowadzenia danych do programu należy uruchomić wiersz poleceń w lokalizacji, w której znajduje się plik z programem. Następnie należy użyć komendy: ***python Projekt_1.py -plik nazwa_pliku.txt -trans [nazwa_funkcji](##Nazwy-obsługiwanych-funkcji:) -model [nazwa_elipsoidy](##Nazwy-obsługiwanych-elipsoid:)***. 
 
 	
 
