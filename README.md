@@ -123,3 +123,5 @@ dla danych z pliku wsp_flh.txt (kolejno fi, lambda, h)
 
 ***
 # BŁĘDY ORAZ NIETYPOWE ZACHOWANIA PROGRAMU
+
+W przypadku kiedy użytkownik wprowadzi nieobsługiwaną funkcję otrzyma komunikat "Ta operacja jest niemożliwa!". Podobnie w przypadku wprowadzenia niepoprawnej nazwy elipsoidy - program wyświetli komunikat "Ta operacja jest nie zostanie wykonana, niepoprawne dane!".
