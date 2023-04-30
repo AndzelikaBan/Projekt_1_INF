@@ -168,7 +168,30 @@ if __name__ == "__main__":
     
     print(args.plik)
 
-
+      
+    try:
+        dane = np.genfromtxt(args.plik, delimiter=",")
+        obiekt = Transformacje(model[args.model])
+        a = obiekt.a
+        e2 = obiekt.e2
+        result = []
+        print(dane)
+        for xyz in dane:    
+            if trans[args.trans]=="hirvonen":
+                line = obiekt.hirvonen(xyz[0],xyz[1],xyz[2])
+                result.append(line)
+               
+            if trans[args.trans]=="flh2XYZ":
+                line = obiekt.flh2XYZ(xyz[0],xyz[1],xyz[2])
+                result.append(line)
+               
+            if trans[args.trans]=="pl1992":
+                line = obiekt.pl1992(xyz[0],xyz[1])
+                result.append(line)
+               
+            if trans[args.trans]=="pl2000":
+                line = obiekt.pl2000(xyz[0],xyz[1])
+                result.append(line)
 
 
 
