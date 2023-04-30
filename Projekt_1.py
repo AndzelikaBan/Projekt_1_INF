@@ -23,7 +23,7 @@ class Transformacje:
             self.a = 6370245.0
             self.b = 6356863.01877
         else:
-            raise NotImplementedError(f"{model} Ta operacja jest nie zostanie wykonana, nie poprawne dane!")    
+            raise NotImplementedError(f"{model} Ta operacja jest nie zostanie wykonana, niepoprawne dane!")    
         self.sp = (self.a - self.b) / self.a
         self.e2 = (2 * self.sp - self.sp ** 2) 
         
@@ -154,7 +154,7 @@ class Transformacje:
         
         x92 = xgk * m - 5300000
         y92 = ygk*m + 500000
-        return  x92, y92,xgk,ygk
+        return  x92, y92
     
     
     def pl2000(self,fi,l,m=0.999923):
@@ -232,9 +232,10 @@ class Transformacje:
         
         x2000 = xgk * m 
         y2000 = ygk*m + (strefa *1000000) +500000
-        return  x2000, y2000,xgk,ygk
+        return  x2000, y2000
     
-    def XYZ2neu(self,s,alfa,z,fi,l):
+    
+    def XYZ2neu(self,s,alfa,z,X,Y,Z):
         """
         Funkcja, która, przyjmujac współrzedne krzywoliniowe utworzy macierz obrotu 
         potrzebną do przeliczenia współrzędnych do układu współrzędnych neu
@@ -244,8 +245,10 @@ class Transformacje:
         s : [float] : dlugosc
         alfa: kat w radianach 
         z : kat zenitalny w radianach 
-        fi : [float] : wspołrzędna fi punktu początkowego układu lokalnego
-        l : [float] :wspołrzędna l punktu początkowego układu lokalnego
+        X : [float] : Współrzędna X w układzie ortokartezjańskim
+        Y : [float] : Współrzędna Y w układzie ortokartezjańskim
+        Z : [float] : Współrzędna Z w układzie ortokartezjańskim
+        
     
         OUTPUT:
         -------
@@ -264,6 +267,17 @@ class Transformacje:
         NEU : [array of float64] : współrzedne topocentryczne (North , East (E), Up (U))
     
         """
+        p = np.sqrt(X**2+Y**2)
+        fi = np.arctan(Z/(p*(1-self.e2)))
+        while True: #pętla
+            N=self.a/np.sqrt(1-self.e2*np.sin(fi)**2)
+            h=p/np.cos(fi)-N
+            fip=fi
+            fi=np.arctan(Z/(p*(1-self.e2*N/(N+h))))
+            if abs(fip-fi)<(0.000001/206265):
+                break
+        l=np.arctan2(Y,X)
+        
         dneu=np.array([s*np.sin(z)*np.cos(alfa),
                        s*np.sin(z)*np.sin(alfa),
                        s*np.cos(z)])
@@ -271,6 +285,7 @@ class Transformacje:
                     [-np.sin(fi)*np.sin(l),np.cos(l),np.cos(fi)*np.sin(l)],
                     [ np.cos(fi),            0.     ,np.sin(fi)]])
         return(R.T @ dneu)
+  
     
 
 if __name__ == "__main__":
@@ -282,8 +297,8 @@ if __name__ == "__main__":
     
     print(args.plik)
 
-    model = {"wgs84":"wgs84", "grs80":"grs80", "Elipsoida Krasowskiego":"Elipsoida Krasowskiego"}
-    trans = {"hirvonen": "hirvonen", "flh2XYZ": "flh2XYZ","pl1992":"pl1992", "pl2000":"pl2000", "XYZ2neu":"XYZ2neu"}
+    # model = {"wgs84":"wgs84", "grs80":"grs80", "Elipsoida Krasowskiego":"Elipsoida Krasowskiego"}
+    # trans = {"hirvonen": "hirvonen", "flh2XYZ": "flh2XYZ","pl1992":"pl1992", "pl2000":"pl2000", "XYZ2neu":"XYZ2neu"}
     
 
     try:
@@ -295,23 +310,23 @@ if __name__ == "__main__":
         print(dane)
 
         for xyz in dane:    
-            if trans[args.trans]=="hirvonen":
+            if args.trans=="hirvonen":
                 line = obiekt.hirvonen(xyz[0],xyz[1],xyz[2])
                 result.append(line)
                
-            if trans[args.trans]=="flh2XYZ":
+            if args.trans=="flh2XYZ":
                 line = obiekt.flh2XYZ(xyz[0],xyz[1],xyz[2])
                 result.append(line)
                
-            if trans[args.trans]=="pl1992":
+            if args.trans=="pl1992":
                 line = obiekt.pl1992(xyz[0],xyz[1])
                 result.append(line)
                
-            if trans[args.trans]=="pl2000":
+            if args.trans=="pl2000":
                 line = obiekt.pl2000(xyz[0],xyz[1])
                 result.append(line)
                 
-            if trans[args.trans]=="XYZ2neu":
+            if args.trans=="XYZ2neu":
                 line = obiekt.XYZ2neu(xyz[0],xyz[1],xyz[2],xyz[3],xyz[4])
                 result.append(line)
             else:
@@ -321,8 +336,8 @@ if __name__ == "__main__":
 
 
         print(result)
-        np.savetxt("wyniki.txt",result,delimiter=",",fmt='%8.6f')
-            
+        np.savetxt("wyniki.txt",result,delimiter=" , ",fmt='%8.6f', header ='Transformacje\\ Projekt wykonany przez: Andżelika Bańkowska, Nikola Bobik, Alicja Dymowska \n Wyniki podawane sa zgodnie z kolejnoscia określoną w pliku opisowym do kodu, oddzielone przecinkiem')
+
         
     finally:
         print("Plik wynikowy zapisany.")
