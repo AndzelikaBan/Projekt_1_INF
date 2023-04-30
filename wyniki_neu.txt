@@ -1,0 +1,5 @@
+# Transformacje\ Projekt wykonany przez: And¿elika Bañkowska, Nikola Bobik, Alicja Dymowska 
+#  Wyniki podawane sa zgodnie z kolejnoscia okreœlon¹ w pliku opisowym do kodu, oddzielone przecinkiem
+4680.535749 , -30427.182653 , -3644.055559
+4831.520773 , -31408.704674 , -3761.605738
+4982.505797 , -32390.226695 , -3879.155918
