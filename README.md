@@ -7,7 +7,7 @@
 - [Jak korzystać z programu](#JAK-KORZYSTAĆ-Z-PROGRAMU)
 - [Błędy oraz nietypowe zachowania programu](#BŁĘDY-ORAZ-NIETYPOWE-ZACHOWANIA-PROGRAMU)
 
-
+***
 
 # OPIS DZIAŁANIA PROGRAMU
 
@@ -19,17 +19,21 @@ Jest 5 opcji przeliczania współrzędnych:
 - BL (elipsoidalne fi, lambda, h) -> PL2000
 - BL (elipsoidalne fi, lambda, h) -> PL1992
 
+***
+
 # WYMAGANIA
 
 Żeby program poprawnie działał na danym komputerze użytkownik musi spełnić następujące wymagania:
 - mieć zainstalowanego Pythona w wersji 3.9
 - mieć zainstalowane biblioteki: numpy, math, argparse
 
+***
 
 # OBSŁUGIWANE SYSTEMY
 - Windows 10
 - Windows 11
 
+***
 
 # JAK KORZYSTAĆ Z PROGRAMU
 
@@ -41,7 +45,7 @@ Przykładowy format pliku txt:
 ## Przykładowe wywołanie
 W celu wprowadzenia danych do programu należy uruchomić wiersz poleceń w lokalizacji, w której znajduje się plik z programem. Następnie należy użyć komendy: ***python Projekt_1.py -plik nazwa_pliku.txt -trans [nazwa_funkcji](#Nazwy-obsługiwanych-funkcji) -model [nazwa_elipsoidy](#Nazwy-obsługiwanych-elipsoid)***. 
 
-	
+***	
 
 # Nazwy obsługiwanych elipsoid
 - grs80
@@ -55,5 +59,6 @@ W celu wprowadzenia danych do programu należy uruchomić wiersz poleceń w loka
 - pl2000 (przelicza współrzędne fi, lambda do układu PL2000)
 - XYZ2neu (przelicza współrzędne fi, lambda do układu NEU)
 
+***
 
 # BŁĘDY ORAZ NIETYPOWE ZACHOWANIA PROGRAMU
