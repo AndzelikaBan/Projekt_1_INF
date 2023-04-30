@@ -71,6 +71,38 @@ class Transformacje:
     
     
     def pl2000(self,fi,l,m=0.999923):
+        """
+        Przeniesienie wspolrzednych geodezyjnych krzywoliniowych fi lam punktu A
+        do ukladu wspolrzednych PL-2000
+
+        Parameters
+        ----------
+        fi : float
+            Szerokosc geodezujna punktu A.
+            Jednostka -- RAD
+        l : float
+            Dlugosc geodeztjna punktu A.
+            Jednostka -- RAD
+        a : float, optional
+            Wielka połos. The default is 6378137.
+            Jednostka -- METR
+        e2 : float, optional
+            I mimosrod elipsoidy. The default is 0.00669438002290.
+            Jednostka -- brak
+        m : float, optional
+            Wspolczynnik zmiany skali . The default is 0.999923.
+            Jednostka -- bral
+
+        Returns
+        -------
+        x2000 : float
+            Wspolrzedna X punktu A w ukladzie wspolrzednych PL-2000.
+            Jednostka -- METR
+        y2000 : float
+            Wspolrzedna X punktu A w ukladzie wspolrzednych PL-2000.
+            Jednostka -- METR
+
+        """
         l0=0 
         strefa = 0
         if l >np.deg2rad(13.5) and l < np.deg2rad(16.5):
