@@ -5,6 +5,7 @@
 - [Wymagania](#WYMAGANIA)
 - [Obsługiwane systemy](#OBSŁUGIWANE-SYSTEMY)
 - [Jak korzystać z programu](#JAK-KORZYSTAĆ-Z-PROGRAMU)
+- [Przykładowe komendy wywołania programu](#PRZYKŁADOWE-KOMENDY-WYWOŁANIA-PROGRAMU)
 - [Przykładowe transformacje](#PRZYKŁADOWE-TRANSFORMACJE)
 - [Błędy oraz nietypowe zachowania programu](#BŁĘDY-ORAZ-NIETYPOWE-ZACHOWANIA-PROGRAMU)
 
@@ -62,6 +63,39 @@ Plik ten zapisany zostanie w folderze, w którym znajduje się skrypt z programe
 - pl1992 (przelicza współrzędne fi, lambda do układu PL1992)
 - pl2000 (przelicza współrzędne fi, lambda do układu PL2000)
 - XYZ2neu (przelicza współrzędne X, Y, Z do układu NEU)
+
+***
+
+# PRZYKŁADOWE KOMENDY WYWOŁANIA PROGRAMU 
+- *flh2XYZ*
+
+```sh
+python Projekt_1.py -plik wsp_flh.txt -trans flh2XYZ -model grs80
+```
+
+- *hirvonen*
+
+```sh
+python Projekt_1.py -plik wsp_inp.txt -trans hirvonen -model grs80
+```
+
+- *pl1992*
+
+```sh
+python Projekt_1.py -plik wsp_flh.txt -trans pl1992 -model grs80
+```
+
+- *pl2000*
+
+```sh
+python Projekt_1.py -plik wsp_flh.txt -trans pl2000 -model grs80
+```
+
+- *XYZ2neu*
+
+```sh
+python Projekt_1.py -plik neu.txt -trans XYZ2neu -model grs80
+```
 
 ***
 
