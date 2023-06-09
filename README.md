@@ -6,7 +6,7 @@
 - [Obsługiwane systemy](#OBSŁUGIWANE-SYSTEMY)
 - [Jak korzystać z programu](#JAK-KORZYSTAĆ-Z-PROGRAMU)
 - [Przykładowe komendy wywołania programu](#PRZYKŁADOWE-KOMENDY-WYWOŁANIA-PROGRAMU)
-- [Przykładowe transformacje](#PRZYKŁADOWE-TRANSFORMACJE)
+- [Przykładowe transformacje](#PRZYKŁADOWE-TRANSFORMACJE-DLA-ELIPSOIDY-GRS80)
 - [Błędy oraz nietypowe zachowania programu](#BŁĘDY-ORAZ-NIETYPOWE-ZACHOWANIA-PROGRAMU)
 
 ***
