@@ -100,57 +100,59 @@ python Projekt_1.py -plik neu.txt -trans XYZ2neu -model grs80
 ***
 
 # PRZYKŁADOWE TRANSFORMACJE DLA ELIPSOIDY GRS80
+
+<ins>Poniżej podano w jakich jednostkach są współrzędne w plikach wejściowych i wyjściowych.</ins>
 - *flh2XYZ*
  
-dla pierwszego punktu z pliku wsp_flh.txt (kolejno fi, lambda, h)
+dla pierwszego punktu z pliku wsp_flh.txt (kolejno fi[rad], lambda[rad], h[m])
   ```sh
   9.092689315350223067e-01,3.670695034002574020e-01,1.413986623911187053e+02
   ```
-  otrzymujemy wyniki (kolejno X, Y, Z)
+  otrzymujemy wyniki (kolejno X[m], Y[m], Z[m])
   ```sh
   3664940.5000059702, 1409153.5900022953, 5009571.17000816
   ```
   
   - *hirvonen*
   
-  dla pierwszego punktu z pliku wsp_inp.txt (kolejno X, Y, Z)
+  dla pierwszego punktu z pliku wsp_inp.txt (kolejno X[m], Y[m], Z[m])
   ```sh
  3664940.500,1409153.590,5009571.170
   ```
-  otrzymujemy wyniki (kolejno fi, lambda, h)
+  otrzymujemy wyniki (kolejno fi[rad], lambda[rad], h[m])
   ```sh
  0.9092689315350223, 0.3670695034002574, 141.3986623911187
   ```
   
   - *pl1992*
   
-  dla pierwszego punktu z pliku wsp_flh.txt (kolejno fi, lambda, h)
+  dla pierwszego punktu z pliku wsp_flh.txt (kolejno fi[rad], lambda[rad], h[m])
   ```sh
  9.092689315350223067e-01,3.670695034002574020e-01,1.413986623911187053e+02
   ```
-  otrzymujemy wyniki (kolejno X92, Y92)
+  otrzymujemy wyniki (kolejno X92[m], Y92[m])
   ```sh
  472071.3410713384, 639114.4909222787
   ```
   
  - *pl2000*
  
-  dla pierwszego punktu z pliku wsp_flh.txt (kolejno fi, lambda, h)
+  dla pierwszego punktu z pliku wsp_flh.txt (kolejno fi[rad], lambda[rad], h[m])
   ```sh
   9.092689315350223067e-01,3.670695034002574020e-01,1.413986623911187053e+02
   ```
-  otrzymujemy wyniki (kolejno X2000, Y2000)
+  otrzymujemy wyniki (kolejno X2000[m], Y2000[m])
   ```sh
   5773722.720951517, 7502160.783244321
   ```
   
  - *XYZ2neu*
  
-  dla pierwszego punktu z pliku neu.txt (kolejno s[m], alfa[rad], z[rad], fi, lambda)
+  dla pierwszego punktu z pliku neu.txt (kolejno s[m], alfa[rad], z[rad], fi[rad], lambda[rad])
   ```sh
   31000,4.886921905584122,1.5707963267948966,0.9092689315350225,0.3670695034002574
   ```
-  otrzymujemy wyniki (kolejno n, e, u)
+  otrzymujemy wyniki (kolejno n[m], e[m], u[m])
   ```sh
   4680.53574901, -30427.18265275,  -3644.05555915
   ```
