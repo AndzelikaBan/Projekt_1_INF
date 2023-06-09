@@ -161,3 +161,5 @@ dla pierwszego punktu z pliku wsp_flh.txt (kolejno fi[rad], lambda[rad], h[m])
 # BŁĘDY ORAZ NIETYPOWE ZACHOWANIA PROGRAMU
 
 W przypadku kiedy użytkownik wprowadzi nieobsługiwaną funkcję otrzyma komunikat "Ta operacja jest niemożliwa!". Podobnie w przypadku wprowadzenia niepoprawnej nazwy elipsoidy - program wyświetli komunikat "Ta operacja jest nie zostanie wykonana, niepoprawne dane!".
+
+<ins>Ponadto transformacje BLh -> PL2000 oraz BLh -> PL1992 na modelu elipsoidy Krasowskiego dają błędne wyniki i nie powinny być używane!</ins>
