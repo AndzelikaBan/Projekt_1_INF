@@ -62,7 +62,7 @@ Plik ten zapisany zostanie w folderze, w którym znajduje się skrypt z programe
 - hirvonen (przelicza współrzędne X, Y, Z na współrzędne fi, lambda, h)
 - pl1992 (przelicza współrzędne fi, lambda do układu PL1992)
 - pl2000 (przelicza współrzędne fi, lambda do układu PL2000)
-- XYZ2neu (przelicza współrzędne X, Y, Z do układu NEU)
+- XYZ2neu (przelicza współrzędne X, Y, Z do układu NEU, na podstawie współrzędnych miejsca obserwacji i satelity)
 
 ***
 
@@ -101,7 +101,7 @@ python Projekt_1.py -plik neu.txt -trans XYZ2neu -model grs80
 
 # PRZYKŁADOWE TRANSFORMACJE DLA ELIPSOIDY GRS80
 
-<ins>Poniżej podano w jakich jednostkach są współrzędne w plikach wejściowych i wyjściowych.</ins>
+<ins>Poniżej podano struktrurę plików oraz w jakich jednostkach są współrzędne w plikach wejściowych i wyjściowych.</ins>
 - *flh2XYZ*
  
 dla pierwszego punktu z pliku wsp_flh.txt (kolejno fi[rad], lambda[rad], h[m])
@@ -148,9 +148,9 @@ dla pierwszego punktu z pliku wsp_flh.txt (kolejno fi[rad], lambda[rad], h[m])
   
  - *XYZ2neu*
  
-  dla pierwszego punktu z pliku neu.txt (kolejno s[m], alfa[rad], z[rad], fi[rad], lambda[rad])
+  dla pierwszego punktu z pliku neu.txt (kolejno X[m], Y[m], Z[m], X0[m], Y0[m], Z0[m] -> gdzie X, Y, Z są współrzędnymi odbiornika, a X0, Y0, Z0 współrzędnymi satelity)
   ```sh
-  31000,4.886921905584122,1.5707963267948966,0.9092689315350225,0.3670695034002574
+  3850699.999412209,1658259.999949739,4790659.999869207,3855141.5954925404,1626409.7007365027,4798064.7745897975
   ```
   otrzymujemy wyniki (kolejno n[m], e[m], u[m])
   ```sh
