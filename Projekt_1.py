@@ -236,46 +236,31 @@ class Transformacje:
     
     
    
-    def XYZ2neu(self,s,alfa,z,fi,l):
-        """
-        Funkcja, która, przyjmujac współrzedne krzywoliniowe utworzy macierz obrotu 
-        potrzebną do przeliczenia współrzędnych do układu współrzędnych neu
-    
-        INPUT:
-        ----------
-        s : [float] : dlugosc
-        alfa: kat w radianach 
-        z : kat zenitalny w radianach 
-        X : [float] : Współrzędna X w układzie ortokartezjańskim
-        Y : [float] : Współrzędna Y w układzie ortokartezjańskim
-        Z : [float] : Współrzędna Z w układzie ortokartezjańskim
-        
-    
-        OUTPUT:
-        -------
-        R : [array of float64] : macierz obrotu
-    
-        
-        Funckja obliczająca wektor w układzie neu
-    
-        Parameters:
-        -----------
-        R : R : [array of float64] : macierz obrotu
-        dneu : [array of float64] : macierz stworzona z : s, alfa,z
-        
-        Returns:
-        -------
-        NEU : [array of float64] : współrzedne topocentryczne (North , East (E), Up (U))
-    
-        """
-        dneu=np.array([s*np.sin(z)*np.cos(alfa),
-                       s*np.sin(z)*np.sin(alfa),
-                       s*np.cos(z)])
-        R=np.array([[-np.sin(fi)*np.cos(l),-np.sin(l),np.cos(fi)*np.cos(l)],
-                    [-np.sin(fi)*np.sin(l),np.cos(l),np.cos(fi)*np.sin(l)],
-                    [ np.cos(fi),            0.     ,np.sin(fi)]])
-        return(R.T @ dneu)
-        
+    def Rneu(self, fi, lam):
+        Rneu = np.array([
+            [-np.sin(fi) * np.cos(lam), -np.sin(lam), np.cos(fi) * np.cos(lam)],
+            [-np.sin(fi) * np.sin(lam), np.cos(lam), np.cos(fi) * np.sin(lam)],
+            [np.cos(fi), 0, np.sin(fi)] ])
+        return Rneu
+
+
+    def XYZ2neu(self, X, Y, Z, X0, Y0, Z0):
+        neu = []
+        p = np.sqrt(X0**2 + Y0**2)
+        fi = np.arctan(Z0 / (p * (1 - self.e2)))
+        while True:  # pętla
+            N = self.a / np.sqrt(1 - self.e2 * np.sin(fi)**2)
+            h = p / np.cos(fi) - N
+            fip = fi
+            fi = np.arctan(Z0 / (p * (1 - self.e2 * N / (N + h))))
+            if abs(fip - fi) < (0.000001 / 206265):
+                break
+        lam = np.arctan2(Y0, X0)  # lambda
+        R_neu = self.Rneu(fi, lam)
+        X_sr = np.array([X - X0, Y - Y0, Z - Z0])
+        X_rneu = np.dot(R_neu.T, X_sr)
+        neu.append(X_rneu)
+        return neu
         
        
     
