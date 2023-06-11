@@ -1,14 +1,5 @@
-# Transformacje\ Projekt wykonany przez: Andøelika BaÒkowska, Nikola Bobik, Alicja Dymowska 
-#  Wyniki podawane sa zgodnie z kolejnoscia okreúlonπ w pliku opisowym do kodu, oddzielone przecinkiem
-0.909269 , 0.367070 , 141.398662
-0.909269 , 0.367070 , 141.399825
-0.909269 , 0.367069 , 141.403354
-0.909269 , 0.367069 , 141.407672
-0.909269 , 0.367070 , 141.410130
-0.909269 , 0.367070 , 141.402211
-0.909269 , 0.367069 , 141.406534
-0.909269 , 0.367069 , 141.411063
-0.909269 , 0.367070 , 141.407263
-0.909269 , 0.367070 , 141.404578
-0.909269 , 0.367070 , 141.407577
-0.909269 , 0.367070 , 141.405583
+# Transformacje\ Projekt wykonany przez: And≈ºelika Ba≈Ñkowska, Nikola Bobik, Alicja Dymowska 
+#  Wyniki podawane sa zgodnie z kolejnoscia okre≈õlonƒÖ w pliku opisowym do kodu, oddzielone przecinkiem
+0.909268931535022 , 0.367069503400257 , 141.398662391118705
+0.909268930534912 , 0.367069500109132 , 141.399824518710375
+0.909268929823877 , 0.367069496818006 , 141.403353812173009
