@@ -110,7 +110,7 @@ dla pierwszego punktu z pliku wsp_flh.txt (kolejno fi[rad], lambda[rad], h[m])
   ```
   otrzymujemy wyniki (kolejno X[m], Y[m], Z[m])
   ```sh
-  3664940.5000059702, 1409153.5900022953, 5009571.17000816
+  3664940.500005, 1409153.590002, 5009571.170008
   ```
   
   - *hirvonen*
@@ -121,7 +121,7 @@ dla pierwszego punktu z pliku wsp_flh.txt (kolejno fi[rad], lambda[rad], h[m])
   ```
   otrzymujemy wyniki (kolejno fi[rad], lambda[rad], h[m])
   ```sh
- 0.9092689315350223, 0.3670695034002574, 141.3986623911187
+ 0.909268931535022, 0.367069503400257, 141.3986623911187
   ```
   
   - *pl1992*
@@ -132,7 +132,7 @@ dla pierwszego punktu z pliku wsp_flh.txt (kolejno fi[rad], lambda[rad], h[m])
   ```
   otrzymujemy wyniki (kolejno X92[m], Y92[m])
   ```sh
- 472071.3410713384, 639114.4909222787
+ 472071.341071, 639114.490922
   ```
   
  - *pl2000*
@@ -143,7 +143,7 @@ dla pierwszego punktu z pliku wsp_flh.txt (kolejno fi[rad], lambda[rad], h[m])
   ```
   otrzymujemy wyniki (kolejno X2000[m], Y2000[m])
   ```sh
-  5773722.720951517, 7502160.783244321
+  5773722.720951, 7502160.783244
   ```
   
  - *XYZ2neu*
