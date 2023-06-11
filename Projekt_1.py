@@ -290,30 +290,41 @@ if __name__ == "__main__":
             if args.trans=="hirvonen":
                 line = obiekt.hirvonen(xyz[0],xyz[1],xyz[2])
                 result.append(line)
+                print(result)
+                np.savetxt("wyniki_hirvonen.txt",result,delimiter=" , ",fmt='%8.15f', header ='Transformacje\\ Projekt wykonany przez: Andżelika Bańkowska, Nikola Bobik, Alicja Dymowska \n Wyniki podawane sa zgodnie z kolejnoscia określoną w pliku opisowym do kodu, oddzielone przecinkiem')
+
                
             elif args.trans=="flh2XYZ":
                 line = obiekt.flh2XYZ(xyz[0],xyz[1],xyz[2])
                 result.append(line)
+                print(result)
+                np.savetxt("wyniki_flh2XYZ.txt",result,delimiter=" , ",fmt='%8.6f', header ='Transformacje\\ Projekt wykonany przez: Andżelika Bańkowska, Nikola Bobik, Alicja Dymowska \n Wyniki podawane sa zgodnie z kolejnoscia określoną w pliku opisowym do kodu, oddzielone przecinkiem')
+
                
             elif args.trans=="pl1992":
                 line = obiekt.pl1992(xyz[0],xyz[1])
                 result.append(line)
+                print(result)
+                np.savetxt("wyniki_pl1992.txt",result,delimiter=" , ",fmt='%8.6f', header ='Transformacje\\ Projekt wykonany przez: Andżelika Bańkowska, Nikola Bobik, Alicja Dymowska \n Wyniki podawane sa zgodnie z kolejnoscia określoną w pliku opisowym do kodu, oddzielone przecinkiem')
+
                
             elif args.trans=="pl2000":
                 line = obiekt.pl2000(xyz[0],xyz[1])
                 result.append(line)
+                print(result)
+                np.savetxt("wyniki_pl2000.txt",result,delimiter=" , ",fmt='%8.6f', header ='Transformacje\\ Projekt wykonany przez: Andżelika Bańkowska, Nikola Bobik, Alicja Dymowska \n Wyniki podawane sa zgodnie z kolejnoscia określoną w pliku opisowym do kodu, oddzielone przecinkiem')
+
                 
             elif args.trans=="XYZ2neu":
                 line = obiekt.XYZ2neu(xyz[0],xyz[1],xyz[2],xyz[3],xyz[4])
                 result.append(line)
+                print(result)
+                np.savetxt("wyniki_XYZ2neu.txt",result,delimiter=" , ",fmt='%8.6f', header ='Transformacje\\ Projekt wykonany przez: Andżelika Bańkowska, Nikola Bobik, Alicja Dymowska \n Wyniki podawane sa zgodnie z kolejnoscia określoną w pliku opisowym do kodu, oddzielone przecinkiem')
+
             else:
                 trans = args.trans
                 raise NotImplementedError(f"{trans} Ta operacja jest niemożliwa!")   
             
-
-
-        print(result)
-        np.savetxt("wyniki.txt",result,delimiter=" , ",fmt='%8.6f', header ='Transformacje\\ Projekt wykonany przez: Andżelika Bańkowska, Nikola Bobik, Alicja Dymowska \n Wyniki podawane sa zgodnie z kolejnoscia określoną w pliku opisowym do kodu, oddzielone przecinkiem')
 
         
     finally:
