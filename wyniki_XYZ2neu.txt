@@ -1,0 +1,3 @@
+# Transformacje\ Projekt wykonany przez: Andżelika Bańkowska, Nikola Bobik, Alicja Dymowska 
+#  Wyniki podawane sa zgodnie z kolejnoscia określoną w pliku opisowym do kodu, oddzielone przecinkiem
+-11112.75813832,  31072.13499321,   -170.46377613
