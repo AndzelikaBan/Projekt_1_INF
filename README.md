@@ -154,7 +154,7 @@ dla pierwszego punktu z pliku wsp_flh.txt (kolejno fi[rad], lambda[rad], h[m])
   ```
   otrzymujemy wyniki (kolejno n[m], e[m], u[m])
   ```sh
-  4680.53574901, -30427.18265275,  -3644.05555915
+  -11112.75813832,  31072.13499321,   -170.46377613
   ```
 
 ***
